@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">Infection calculator</div>
+
+        <div class="tag">Current health</div>
+        <div class="setting" id="health-settings">
+            <input type="range" id="health-slider" min="1" max="100" value="100">
+            <input type="number" id="health-number" min="1" max="100" value="100">
+        </div>
+
+        <div class="tag">Game mode</div>
+        <div class="setting" id="gamemode-settings">
+            <input type="radio" name="gamemode" id="gamemode-survival" value="2">
+            <label for="gamemode-survival">Survival</label>
+        
+            <input type="radio" name="gamemode" id="gamemode-objective" value="1" checked>
+            <label for="gamemode-objective">Objective</label>
+        </div>
+
+        <div class="tag">Difficulty</div>
+        <div class="setting" id="difficulty-settings">
+            <input type="radio" name="difficulty" id="difficulty-casual" value=".975">
+            <label for="difficulty-casual">Casual</label>
+        
+            <input type="radio" name="difficulty" id="difficulty-classic" value=".975" checked>
+            <label for="difficulty-classic">Classic</label>
+        
+            <input type="radio" name="difficulty" id="difficulty-nightmare" value=".14">
+            <label for="difficulty-nightmare">Nightmare</label>
+        </div>
+    
+        <div id="infection-bar"><span></span></div>
+        <div id="infection-pct">45%</div>
+        <div id="infection-pct-raw">infection chance on bite</div>
+    </div>
+    
+    <!--<img src="img/bg.jpg" id="bg-image" alt="">-->
+    <script src="calculator.js"></script>
+</body>
+</html>
