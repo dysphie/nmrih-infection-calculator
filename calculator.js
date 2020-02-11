@@ -13,10 +13,6 @@ var playerHealth = $healthNumber.val();
 var gamemodeModifier = $('#gamemode-settings > input[type=radio]:checked').val();
 var difficultyModifier = $('#difficulty-settings > input[type=radio]:checked').val();
 
-console.log(`playerHealth = ${playerHealth}`);
-console.log(`gamemodeModifier = ${gamemodeModifier}`);
-console.log(`difficultyModifier = ${difficultyModifier}`);
-
 // Keep health slider and input in sync
 $('#health-number, #health-slider').on('input', function()
 {
@@ -26,18 +22,15 @@ $('#health-number, #health-slider').on('input', function()
     // Desaturate bg
     // $('#bg').css('opacity', `${playerHealth/100}`);
 
-    console.log(`playerHealth = ${playerHealth}`);
     ComputeInfectionChance();
 });
 
 $('#gamemode-settings > input[type=radio]').on('click change', function(e) {
-    console.log(`gamemodeModifier = ${e.target.value}`);
     gamemodeModifier = e.target.value;
     ComputeInfectionChance();
 });
 
 $('#difficulty-settings > input[type=radio]').on('click change', function(e) {
-    console.log(`difficultyModifier = ${e.target.value}`);
     difficultyModifier = e.target.value;
     ComputeInfectionChance();
 });
@@ -66,10 +59,8 @@ function ComputeInfectionChance()
     if(infectionChance > 100)
         infectionChance = 100;
 
-    console.log('infectionChance = ' + infectionChance);
     /* Recolor the results */
     infectionChanceColor = GetColorForValue(infectionChance);
-    console.log('infectionChanceColor = ', infectionChanceColor);
 
     $infectionBarFill.css({
         'width': infectionChance + '%',
