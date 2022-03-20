@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NMRiH Infection Calculator</title>
+</head>
+
+<body>
+
+  <form action="">
+    
+    <fieldset id="gamemode">
+      <legend>Game Mode</legend>
+      <input type="radio" id="nms" name="gamemode" value="2.0">
+      <label for="nms">Survival</label>
+      
+      <input type="radio" id="nmo" name="gamemode" value="1.0" checked>
+      <label for="nmo">Objective</label>
+    </fieldset>
+
+    <fieldset id="gamediff">
+      <legend>Difficulty</legend>
+      <input type="radio" name="gamediff" id="classic" value="0.975" checked>
+      <label for="classic">Casual/Classic</label>
+      
+      <input type="radio" name="gamediff" id="nightmare" value="0.14">
+      <label for="nightmare">Nightmare</label>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Health</legend>
+      <input type="range" min="16" max="100" value="100" class="slider" id="health-slider">
+      <input type="number" id="health-text" value="100">
+    </fieldset>
+
+    <!-- Add ticked checkbox -->
+    <fieldset>
+      <legend>Advanced settings</legend>
+      <div id="cvars">
+        <div>
+          <label for="survival-modifier">sv_infect_survival_modifier</label>
+          <input class="cvar" type="number" id="survival-modifier" value="1.0">
+        </div>
+          
+        <div>
+          <label for="infect-chance-modifier">sv_infect_chance_modifier</label>
+          <input class="cvar" type="number" id="infect-chance-modifier" value="0.975">
+        </div>
+
+        <div>
+          <label for="bite-dmg">sv_zombie_dmg_onehand</label>
+          <input class="cvar" type="number" id="bite-dmg" value="15">
+        </div>
+
+        <div>
+          <label for="infect-chance">sv_infect_chance</label>
+          <input class="cvar" type="number" id="infect-chance" value="1.0">
+        </div>
+
+        <div>
+          <label for="max-health">Max Health</label>
+          <input class="cvar" type="number" id="max-health" value="100">
+        </div>
+        
+        <button>Default</button>
+      
+    </fieldset>
+
+    <p><span id="infect-pct-output"></span>% chance of infection on bite</p>
+
+  </form>
+  <script src="index.js"></script>
+</body>
+
+</html>
