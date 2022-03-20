@@ -10,7 +10,6 @@ const infectChance = document.getElementById("infect-chance");
 const gamemode = document.getElementsByName("gamemode");
 const gamediff = document.getElementsByName("gamediff");
 const cvars = document.getElementById("cvars");
-// for each cvar, add 'input' event listener
 for (let i = 0; i < cvars.children.length; i++) {
     const cvar = cvars.children[i];
     cvar.addEventListener("input", () => {
@@ -54,10 +53,10 @@ if (maxHealth) {
     maxHealth.addEventListener("input", () => {
         const health = getHealth();
         const maxHealth = getMaxHealth();
+        healthSlider.max = maxHealth.toString();
         if (health > maxHealth) {
             healthText.value = maxHealth.toString();
             healthSlider.value = maxHealth.toString();
-            healthSlider.max = maxHealth.toString();
         }
         reComputeInfectChance();
     });
