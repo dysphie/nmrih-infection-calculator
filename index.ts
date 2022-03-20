@@ -68,7 +68,7 @@ if (maxHealth) {
     const health = getHealth();
     const maxHealth = getMaxHealth();
     healthSlider.max = maxHealth.toString();
-    
+
     if (health > maxHealth) {
       healthText.value = maxHealth.toString();
       healthSlider.value = maxHealth.toString();
@@ -116,8 +116,12 @@ function getInfectChance()
   return parseFloat(infectChance.value);
 }
 
+function getBiteDmg() {
+  return parseInt(biteDmg.value);
+}
+
 function reComputeInfectChance() {
-  const healthRatio = getHealth() / getMaxHealth();
+  const healthRatio = (getHealth() - getBiteDmg()) / getMaxHealth();
   const infectionChance = 1.0 - healthRatio * getInfectChanceModifier();
   const finalInfChance = (infectionChance * infectionChance) * getGamerulesModifier() * getInfectChance();
   console.log(finalInfChance);
